@@ -8,6 +8,7 @@ main = do print m
           print (getValue 0 (Just 5))
           print (getValue 0 (Just (-5)))
           print (absolute(-10))
+          print (area 10.0)
 
 m, n :: Int
 m = 1 + 3
@@ -22,3 +23,8 @@ getValue defval maybe =
            | otherwise -> -x -- otherwise is equivalent to True
 
 absolute x = if x < 0 then -x else x
+
+area r =
+  let pi = 3.14
+      square x = x * x
+  in pi * square r
