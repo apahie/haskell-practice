@@ -9,6 +9,7 @@ main = do print m
           print (getValue 0 (Just (-5)))
           print (absolute(-10))
           print (area 10.0)
+          print (area2 2.0)
 
 m, n :: Int
 m = 1 + 3
@@ -28,3 +29,8 @@ area r =
   let pi = 3.14
       square x = x * x
   in pi * square r
+
+area2 r = pi * square r
+  where
+    pi = 3.14
+    square x = x * x
