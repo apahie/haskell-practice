@@ -6,7 +6,7 @@ main = do print m
           print t
           print(getValue 0 Nothing)
           print(getValue 0 (Just 5))
-
+          print(getValue 0 (Just (-5)))
 m, n :: Int
 m = 1 + 3
 n = 456
@@ -16,4 +16,5 @@ getValue defval maybe =
   case maybe of
     Nothing -> defval
     -- _ -> defval
-    Just x -> x
+    Just x | x > 0 -> x
+           | otherwise -> -x -- otherwise is equivalent to True
