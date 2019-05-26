@@ -4,9 +4,11 @@ main = do print m
           print b
           -- print _
           print t
-          print(getValue 0 Nothing)
-          print(getValue 0 (Just 5))
-          print(getValue 0 (Just (-5)))
+          print (getValue 0 Nothing)
+          print (getValue 0 (Just 5))
+          print (getValue 0 (Just (-5)))
+          print (absolute(-10))
+
 m, n :: Int
 m = 1 + 3
 n = 456
@@ -18,3 +20,5 @@ getValue defval maybe =
     -- _ -> defval
     Just x | x > 0 -> x
            | otherwise -> -x -- otherwise is equivalent to True
+
+absolute x = if x < 0 then -x else x
