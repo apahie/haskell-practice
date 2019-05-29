@@ -10,6 +10,9 @@ power :: Int -> Int -> Int
 power _ 0 = 1
 power x y = x * power x (y-1)
 
+twice :: (a -> a) -> a -> a
+twice f x = f $ f x
+
 main :: IO()
 main = do
   print (add 2 3)
@@ -18,3 +21,6 @@ main = do
   print $ add 1 $ 2 * 3 -- 上と同じ
   print $ factorial 5
   print $ power 2 10
+  print $ map id [1, 2, 3, 4, 5]
+  print $ map succ [1, 2, 3, 4, 5]
+  print $ twice succ 3
