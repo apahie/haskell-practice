@@ -6,6 +6,10 @@ factorial x =
   if x == 1 then 1
   else x * factorial (x - 1)
 
+power :: Int -> Int -> Int
+power _ 0 = 1
+power x y = x * power x (y-1)
+
 main :: IO()
 main = do
   print (add 2 3)
@@ -13,3 +17,4 @@ main = do
   print (add 1 (2 * 3)) -- 7が表示
   print $ add 1 $ 2 * 3 -- 上と同じ
   print $ factorial 5
+  print $ power 2 10
