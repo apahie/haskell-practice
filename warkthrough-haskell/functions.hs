@@ -24,3 +24,4 @@ main = do
   print $ map id [1, 2, 3, 4, 5]
   print $ map succ [1, 2, 3, 4, 5]
   print $ twice succ 3
+  print $ map (\x -> x*x) [1, 2, 3, 4, 5]
