@@ -13,6 +13,12 @@ power x y = x * power x (y-1)
 twice :: (a -> a) -> a -> a
 twice f x = f $ f x
 
+mult :: Int -> Int -> Int
+mult x y = x * y
+
+double :: Int -> Int
+double = mult 2
+
 main :: IO()
 main = do
   print (add 2 3)
@@ -25,3 +31,4 @@ main = do
   print $ map succ [1, 2, 3, 4, 5]
   print $ twice succ 3
   print $ map (\x -> x*x) [1, 2, 3, 4, 5]
+  print $ double 5
