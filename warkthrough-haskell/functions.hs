@@ -19,6 +19,12 @@ mult x y = x * y
 double :: Int -> Int
 double = mult 2
 
+inc :: Int -> Int
+inc = add 1
+
+inc3 :: Int -> Int
+inc3 = inc . inc . inc
+
 main :: IO()
 main = do
   print (add 2 3)
@@ -32,3 +38,4 @@ main = do
   print $ twice succ 3
   print $ map (\x -> x*x) [1, 2, 3, 4, 5]
   print $ double 5
+  print $ inc3 1
